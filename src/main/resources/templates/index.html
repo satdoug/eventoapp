@@ -13,7 +13,17 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
 </head>
 <body>
-<h1>Lista de Evento</h1>
+<header>
+    <nav>
+        <div class="nav-wrapper">
+            <a href="#" class="brand-logo">Lista de Evento</a>
+            <ul id="nav-mobile" class="right hide-on-med-and-down">
+                <li><a href="/cadastrarEvento" class="waves-effect waves-light btn"><i
+                        class="material-icons left">add_circle_outline</i>Cadastrar Eventos</a></li>
+            </ul>
+        </div>
+    </nav>
+</header>
 <h3><a href="/cadastrarEvento" class="waves-effect waves-light btn"><i
         class="material-icons left">add_circle_outline</i>Cadastrar Evento</a></h3>
 
@@ -28,7 +38,7 @@
     </thead>
     <tbody>
     <tr th:each="evento : ${eventos}">
-        <td><a th:href="${(#mvc.url('EC#detalhesEventos').arg(0, evento.codigo)).build()}"><span th:text="${evento.nome}"></span></a></td>
+        <td><a th:href="${(#mvc.url('EC#detalhesEvento').arg(0, evento.codigo)).build()}"><span th:text="${evento.nome}"></span></a></td>
         <td><span th:text="${evento.local}"></span></td>
         <td><span th:text="${evento.data}"></span></td>
         <td><span th:text="${evento.horario}"></span></td>
